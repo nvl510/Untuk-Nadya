@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .upload-section {
+            margin-top: 20px;
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .image-container img {
+            width: 300px; /* Adjust the width as needed */
+            height: 300px; /* Adjust the height as needed */
+            object-fit: cover;
+            border-radius: 8px;
+            background-color: transparent; /* Remove background color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Hi Nadya</h1>
+    <p>Ini dibuat oleh Nouval Khairi, ia ingin menceritakan sesorang perempuan yang sangat dia cintai, perempuan cantik ini bernama NADYA</p>
+    <h2>Biodata</h2>
+    <ul>
+        <li><strong>Nama:</strong> Nadya</li>
+        <li><strong>Umur:</strong> 17 tahun</li>
+        <li><strong>Pekerjaan:</strong> [Pekerjaan Anda]</li>
+        <li><strong>Hobi:</strong> Traveling</li>
+        <li><strong>Tempat dan Tanggal Lahir:</strong> Januari </li>
+        <li><strong>Warna Kesukaan:</strong> Pink </li>
+        <li><strong>Tempat yang Ingin Didatangi:</strong> Bandung </li>
+        <li><strong>Film Kesukaan:</strong> Kartun </li>
+        <li><strong>Makanan Kesukaan:</strong> Bakso </li>
+        <li><strong>Jumlah Saudara:</strong> 4 </li>
+        <li><strong>Lagu Kesukaan:</strong> Lagu Inggris  dan Lagu Jawa </li>
+    </ul>
+    <p>Tgl 26 bulan September tahun 2024 aku memulai hubungan dengan wanita cantik, baik, imut, dan lucu, perempuan itu bernama nadya Cantik❤, dia orang jawa, dia tinggal di binjai, dia sangat baik terhadapku, dia selalu bilang jgn selalu insecure terhdap diri sendiri, aku mulai menyukai nya dari sikap dia ke aku, dan aku ingin dia terakhir kalinya yang berada di hidupku, dan aku suka dengan kerandomannya.
+        Dia suka warna pink, dan semua barang dia serba pink, dia jgk suka makan, dia juga suka langit seperti aku juga suka, dan tgl lahirnya aku 😅,Dia juga suka sekali berubah ubah moodnya.
+        
+        Tgl 26 September 2024
+        Seorang wanita yang ku cintai yang bernama nadya hari ini dia pergi kemedan karena dia ingin melamar kerja.
+        Pada malam harinya dia sedang sibuk dengan berkas berkas yang mau disiapin untuk ngelamar kerja, dia di medan tinggal dengan kakaknya.</p>
+    <h2>Foto Unggahan</h2>
+    <div class="image-container" id="imageContainer">
+        <!-- Uploaded images will appear here -->
+    </div>
+    <div class="upload-section">
+        <h2>Unggah Foto Anda</h2>
+        <form>
+            <input type="file" id="fileToUpload" accept="image/*" multiple onchange="previewImages(event)">
+        </form>
+    </div>
+    <script>
+        function previewImages(event) {
+            var files = event.target.files;
+            var imageContainer = document.getElementById('imageContainer');
+
+            for (var i = 0; i < files.length; i++) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'small-image';
+                    img.alt = 'Uploaded image';
+                    imageContainer.appendChild(img);
+                };
+                reader.readAsDataURL(files[i]);
+            }
+        }
+    </script>
+</body>
+</html>
